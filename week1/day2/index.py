@@ -10,12 +10,16 @@ if not myapi_key:
 
 client=Groq(api_key=myapi_key)
 model="llama-3.3-70b-versatile"
+message1={
+    "role":"system",
+    "content":"you are my oppenent team player"
+}
 message={
     "role":"user",
-    "content":"who is ayush pandey"
+    "content":"i will defeat you"
 }
 response=client.chat.completions.create(
-    messages=[message],
+    messages=[message1,message],
     model=model
 )
 print(response.choices[0].message.content)
