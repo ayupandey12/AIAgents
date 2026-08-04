@@ -31,4 +31,9 @@ response=client.chat.completions.create(
     model=model,
     response_format=response_format
 )
-print(response.choices[0].message.content)
+res=response.choices[0].message.content
+print(res)
+import json
+data=json.loads(res)
+ticket=ticket(**data)
+print(ticket.email)
