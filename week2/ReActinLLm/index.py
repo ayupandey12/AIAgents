@@ -89,17 +89,12 @@ def call_agent(user_prompt):
       if match:
 
             tool_name = match.group(1)
-
             tool_input = match.group(2)
-
             tool_input = tool_input.strip()
-
             tool_input = tool_input.strip('"')
 
             if tool_name in tools:
-
                 tool = tools[tool_name]
-
                 observation = tool(tool_input)
 
             else:
