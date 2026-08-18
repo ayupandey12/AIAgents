@@ -42,7 +42,7 @@ Follow these rules:
 1.Decide what you need to do next.
 2.Use only one tool at a time.
 3.After finding the Action just stop immediate.
-4.Don't guest anything or add anyother answer by yourself.
+4.Don't guess anything or add guessed data in answer by yourself.
 5.Wait until you recieve an observation.
 6.Then decide your next step.
 7. When the task is complete, give the Final Answer.
