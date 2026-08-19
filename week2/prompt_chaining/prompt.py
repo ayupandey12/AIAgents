@@ -67,10 +67,8 @@ def step3_match(cskills,jskills):
      return call_llm(system_pm=systempm,user_pm=userpm)
 
 cskills=step1_resumeskillextract()
-print(cskills)
 time.sleep(3)
 jskills=step2_jdskillextract()
-print(jskills)
 time.sleep(3)
 result=step3_match(cskills,jskills)
 print(result)
