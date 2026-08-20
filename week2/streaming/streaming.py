@@ -9,13 +9,20 @@ if not myapi_key:
     raise ValueError("key is not find")
 
 client=Groq(api_key=myapi_key)
-model="llama-3.3-70b-versatile"
+model="openai/gpt-oss-120b"
 message={
     "role":"user",
-    "content":"who is ayush pandey"
+    "content":"Explain me how AI born and when ?"
 }
-response=client.chat.completions.create(
-    messages=[message],
-    model=model
-)
-print(response.choices[0].message.content)
+# response=client.chat.completions.create(  #without streaming
+#     messages=[message],
+#     model=model
+# )
+# print(response.choices[0].message.content)
+#streaming is best for userinterface 
+streaming=client.chat.completions.create(model=model,messages=[message],stream=True)
+
+for ch in streaming:
+    content=ch.choices[0].delta.content
+    if content:
+        print(content,end="",flush=True)
